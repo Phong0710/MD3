@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input id="Number" type="number" placeholder="Nhập vào">
+<button onclick="phong()"> Submit</button>
+<p id="time-countdown"></p>
+</body>
+</html>
+<script>
+    function phong() {
+        let start = document.getElementById(`Number`).value
+
+        function sleep(ms) {
+            return new Promise(resolve => setTimeout(resolve, ms))
+        }
+
+        async function timeOut(i) {
+            while (i > 0) {
+                document.getElementById(`time-countdown`).innerHTML = i;
+                await sleep(1000);
+                i--
+            }
+            document.getElementById(`time-countdown`).innerHTML = "time-countdown"
+        }
+
+        timeOut(start).then(() => {
+            document.getElementById(`time-countdown`).innerHTML
+        })
+
+    }
+</script>

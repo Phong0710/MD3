@@ -16,4 +16,4 @@ async function doSomethingAsync(){
         console.log("Party")
     }
 }
-doSomethingAsync()
+ doSomethingAsync()

@@ -11,7 +11,7 @@ const buyCar = (car) => {
         },1000)
     })
 }
-let money=1000;
+let money=100000;
 buyCar(`Vios`)
 .then((result)=>{
     console.log(`I ${result} Car`)

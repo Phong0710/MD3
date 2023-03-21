@@ -23,6 +23,7 @@ const sever = http.createServer((req, res) => {
                 dataInfoHtml = dataInfoHtml.replace(`{username}`,userInfo.username)
                 dataInfoHtml = dataInfoHtml.replace(`{age}`,userInfo.age)
                 dataInfoHtml = dataInfoHtml.replace(`{sex}`,userInfo.sex)
+                res.writeHead(301,{location: '/'})
                 res.write(dataInfoHtml);
                 res.end();
             })

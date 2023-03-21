@@ -10,7 +10,7 @@ const list = http.createServer((req, res)=>{
        })
    } else {
        let dataInput = ""
-       req.on(data,(chunk)=>{
+       req.on("data",(chunk)=>{
            dataInput += chunk;
            console.log(dataInput)
        })
@@ -21,6 +21,7 @@ const list = http.createServer((req, res)=>{
                htmlDisplay=htmlDisplay.replace('{job}',userInfo.job);
                htmlDisplay=htmlDisplay.replace('{time}',userInfo.time);
                htmlDisplay=htmlDisplay.replace('{level}',userInfo.level);
+               res.writeHead(301, {location : "/"})
                res.write(htmlDisplay);
                res.end();
            })
